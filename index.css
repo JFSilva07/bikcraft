@@ -33,6 +33,7 @@ header {
   position: relative;
   right: 2rem;
 }
+
 .menu ul {
   display: flex;
   gap: 2rem;
@@ -51,6 +52,7 @@ header {
   color: black;
   border-radius: 7px;
   text-transform: uppercase;
+  border: solid 1px white;
 }
 img {
   max-width: 100%;
@@ -103,11 +105,31 @@ img {
 
 .vantagens1 {
   background: white;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto;
-  gap: 20px;
-  padding: 40px;
+  display: flex;
+  display: inline;
+  gap: 2rem;
+  padding: 3rem;
+}
+.vantagens1 p {
+  text-indent: 2.5rem;
+}
+.vantagens1 h3 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.icone {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  color: #900;
+}
+.motor:hover {
+  border-left: #900 solid 3px;
+}
+.km:hover {
+  border-left: #900 solid 3px;
+}
+.rastreador:hover {
+  border-left: #900 solid 3px;
 }
 
 h3 {
@@ -121,4 +143,107 @@ footer {
   font-size: 8px;
   padding: 40px;
   box-sizing: border-box;
+}
+/*Acima o site padão pra PC e abaixo correções da div vantagens1*/
+
+@media (max-width: 1080px) {
+  h1,
+  h2,
+  h3,
+  p,
+  a {
+    font-size: 90%;
+  }
+  .vantagens {
+    font-size: 2.5rem;
+  }
+  body {
+    gap: 1rem;
+  }
+  footer h1 {
+    font-size: 0.7rem;
+  }
+  .conteudo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+@media (max-width: 840px) {
+  .menu a {
+    font-size: 0.5rem;
+  }
+  .vantagens1 {
+    padding: 1rem;
+  }
+  .vermais {
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+  }
+  h2 {
+    font-size: 100%;
+  }
+}
+@media (max-width: 740px) {
+  .vantagens {
+    font-size: 1.5rem;
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    font-size: 0.7rem;
+  }
+  .vermais {
+    font-size: 0.5rem;
+  }
+  .menu a {
+    padding: 0.7rem 1rem;
+  }
+  .menu {
+    margin: 0px;
+    gap: 0px;
+  }
+  header {
+    max-height: 12rem;
+  }
+  .marca {
+    margin-bottom: 3rem;
+  }
+  .vantagens1 p {
+    font-size: 0.7rem;
+  }
+  .vantagens1 h3 {
+    margin-bottom: 0.7rem;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+  .descricao h2::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    background-color: white;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+  }
+  .bike {
+    grid-row: 2;
+    border-radius: 8px;
+  }
+  .vermais {
+    margin-top: 1rem;
+    border-radius: 5px;
+  }
+  .bike {
+    grid-row: 1;
+    max-width: 100%;
+  }
+  .menu {
+    flex-wrap: wrap;
+  }
 }
