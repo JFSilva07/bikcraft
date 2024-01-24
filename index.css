@@ -1,3 +1,24 @@
+:root {
+  --fundo: #dddd;
+  --fundo02: #ffff;
+  --cor-detalhe: rgba(0, 0, 0, 0.3);
+  --cor-principal: #ee2211;
+  --cor-secundaria: #900;
+  --cor-tipografia01: black;
+  --onda: url("onda-clara.svg");
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0f0f0f;
+    --fundo02: #383838;
+    --cor-detalhe: rgba(255, 255, 255, 0.2);
+    --cor-principal: #ee2211;
+    --cor-secundaria: #900;
+    --cor-tipografia01: #ffff;
+    --onda: url("onda-escura.svg");
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
@@ -5,7 +26,7 @@ body {
   gap: 2rem;
   margin-top: 4rem;
   justify-items: center;
-  background: #dddddd;
+  background: var(--fundo);
   flex-wrap: wrap;
 }
 p,
@@ -13,6 +34,8 @@ h1,
 h2,
 h3 {
   margin: 0px;
+  cursor: default;
+  color: var(--cor-tipografia01);
 }
 p {
   font-size: 1.3rem;
@@ -42,17 +65,17 @@ header {
   list-style: none;
 }
 .menu a:hover {
-  border: solid 1px #900;
+  border: solid 1px var(--cor-principal);
 }
 .menu a {
   text-decoration: none;
-  background: white;
+  background: var(--fundo02);
   padding: 15px 30px;
   text-align: center;
-  color: black;
+  color: var(--cor-tipografia01);
   border-radius: 7px;
   text-transform: uppercase;
-  border: solid 1px white;
+  border: solid 1px var(--fundo02);
 }
 img {
   max-width: 100%;
@@ -68,14 +91,14 @@ img {
   display: block;
   width: 3rem;
   height: 0.2rem;
-  background-color: #ee2211;
+  background-color: var(--cor-principal);
   position: absolute;
   right: -1.5rem;
   top: 2rem;
 }
 .descricao {
   padding: 40px;
-  background: white;
+  background: var(--fundo02);
   text-align: right;
   position: relative;
   display: grid;
@@ -83,28 +106,31 @@ img {
   align-items: center;
   justify-items: end;
 }
+.descricao h2 {
+  margin-bottom: 15px;
+}
 .vermais {
-  background: #ee2211;
-  color: white;
+  background: var(--cor-principal);
+  color: var(--cor-tipografia01);
   padding: 15px 30px;
   border-radius: 7px;
   text-decoration: none;
   text-transform: uppercase;
 }
 .vermais:hover {
-  background-color: #900;
+  background-color: var(--cor-secundaria);
 }
 .vantagens {
   font-size: 64px;
   text-align: right;
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--cor-detalhe);
   padding: 40px;
   align-self: center;
-  background-image: url(/onda.svg);
+  background-image: var(--onda);
 }
 
 .vantagens1 {
-  background: white;
+  background: var(--fundo02);
   display: flex;
   display: inline;
   gap: 2rem;
@@ -120,16 +146,25 @@ img {
 .icone {
   margin-right: 1rem;
   margin-left: 0.5rem;
-  color: #900;
+  color: var(--cor-principal);
+}
+.motor {
+  border-left: var(--fundo02) solid 3px;
 }
 .motor:hover {
-  border-left: #900 solid 3px;
+  border-left: var(--cor-principal) solid 3px;
+}
+.km {
+  border-left: var(--fundo02) solid 3px;
 }
 .km:hover {
-  border-left: #900 solid 3px;
+  border-left: var(--cor-principal) solid 3px;
+}
+.rastreador {
+  border-left: var(--fundo02) solid 3px;
 }
 .rastreador:hover {
-  border-left: #900 solid 3px;
+  border-left: var(--cor-principal) solid 3px;
 }
 
 h3 {
@@ -137,7 +172,7 @@ h3 {
 }
 
 footer {
-  background: white;
+  background: var(--fundo02);
   width: 100%;
   text-align: center;
   font-size: 8px;
@@ -226,10 +261,15 @@ footer {
     display: block;
     width: 0px;
     height: 0px;
-    background-color: white;
+    background-color: var(--fundo02);
     position: absolute;
     right: 0rem;
     top: 0rem;
+  }
+  .descricao {
+    top: -15px;
+    gap: 8px;
+    z-index: 2;
   }
   .bike {
     grid-row: 2;
@@ -239,11 +279,16 @@ footer {
     margin-top: 1rem;
     border-radius: 5px;
   }
+
   .bike {
     grid-row: 1;
     max-width: 100%;
+    z-index: 2;
   }
   .menu {
     flex-wrap: wrap;
+  }
+  .menu ul {
+    gap: 1rem;
   }
 }
